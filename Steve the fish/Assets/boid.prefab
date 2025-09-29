@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 7796943502677369384}
   - component: {fileID: 2622303601664322483}
   - component: {fileID: 2369344814145790488}
-  - component: {fileID: 1957182385662992295}
   - component: {fileID: 3927652899916182890}
   - component: {fileID: 3892829618487194332}
   m_Layer: 0
@@ -89,27 +88,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &1957182385662992295
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2645966709474258803}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &3927652899916182890
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -123,7 +101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocity: {x: 1, y: 0, z: 0}
-  maxvelocity: 5
+  maxvelocity: 10
 --- !u!114 &3892829618487194332
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -137,3 +115,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 100
+  separationRadius: 1
+  separationStrength: 1.5
