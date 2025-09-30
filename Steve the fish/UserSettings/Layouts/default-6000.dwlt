@@ -343,9 +343,15 @@ MonoBehaviour:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
+<<<<<<< HEAD
     m_SelectedIDs: 14e50000
     m_LastClickedID: 58644
     m_ExpandedIDs: 0000000032aa0000
+=======
+    m_SelectedIDs: 8caa0000
+    m_LastClickedID: 43660
+    m_ExpandedIDs: 0000000012aa0000
+>>>>>>> 839c435804f1760a94f440932c539edcd6680eee
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -374,7 +380,11 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
+<<<<<<< HEAD
     m_ExpandedIDs: 0000000032aa0000
+=======
+    m_ExpandedIDs: 0000000012aa0000
+>>>>>>> 839c435804f1760a94f440932c539edcd6680eee
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -992,11 +1002,15 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.08717229, y: 0.89959055, z: -0.21045254, w: -0.3726226}
+    m_Target: {x: -0.08160754, y: 0.916967, z: -0.24816921, w: -0.30153337}
     speed: 2
     m_Value: {x: -0.08717229, y: 0.89959055, z: -0.21045254, w: -0.3726226}
   m_Size:
+<<<<<<< HEAD
     m_Target: 2.5148282
+=======
+    m_Target: 5.9532623
+>>>>>>> 839c435804f1760a94f440932c539edcd6680eee
     speed: 2
     m_Value: 2.5148282
   m_Ortho:

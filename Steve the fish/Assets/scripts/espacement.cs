@@ -7,7 +7,8 @@ public class Espacement : MonoBehaviour
 {
 
 	private Boid boid; 
-	public float space; //espace minimal entre les boids
+	public float radius;
+	public float espace;
 
 
 	void Start()
@@ -19,17 +20,29 @@ public class Espacement : MonoBehaviour
     {
 		var boids = FindObjectsByType<Boid>(FindObjectsSortMode.None);
 		var average = Vector3.zero;
+		var found = 0;
 
-		foreach (var boid in boids.Where(b => b != boid))
+        foreach (var boid in boids.Where(b => b != boid))
 		{
-			var diff = boid.transform.position - this.transform.position; // Calculate the difference vector from this boid to the other boid
+			var diff = this.transform.position - boid.transform.position; // Calculate the difference vector from this boid to the other boid
 
-			if (diff.magnitude < space)
+			if (diff.magnitude < radius && diff.magnitude > 0)
 			{
-				average += diff; 
-				found++;
+				Vector3 repulse = diff.normalized / Mathf.Max(diff.magnitude, 0.01f);
+
+				if (diff.magnitude < espace)
+				{
+					average += repulse;
+					found++;
+				}
 			}
 		}
+		if (found > 0)
+		{
+            average = average / found;
+            boid.velocity += Vector3.Lerp(Vector3.zero, average, average.magnitude / radius);
+
+        }
 
 	}
 
