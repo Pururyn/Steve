@@ -150,9 +150,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0
   numbermax: 0
-  BoidPrefab: {fileID: 0}
+  BoidPrefab: {fileID: 8910530111786991652, guid: 44891329e50d9854c9ed801991ce1bd5, type: 3}
+  CohesionVal: 0
+  Separation: 0
+  Alignement: 0
   spawnAreaMin: {x: -20, y: -20, z: -20}
   spawnAreaMax: {x: 20, y: 20, z: 20}
+  direction: {x: 0, y: 0, z: 0}
+  Boids: []
+  sumBoidPosition: {x: 0, y: 0, z: 0}
+  CenterOfMass: {x: 0, y: 0, z: 0}
+  time: 0
 --- !u!4 &370975110
 Transform:
   m_ObjectHideFlags: 0
