@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 6275396490439332835}
   - component: {fileID: 5953049324936311250}
   - component: {fileID: 588394327366432657}
+  - component: {fileID: 362300571765678434}
   m_Layer: 0
   m_Name: boid
   m_TagString: Untagged
@@ -166,3 +167,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 30
   espace: 30
+--- !u!114 &362300571765678434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6719231657290183500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80d241640b1595947ad9a8bc60c6cc88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sphereCenter: {x: 0, y: 0, z: 0}
+  sphereRadius: 30
+  pushStrength: 10
