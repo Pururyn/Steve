@@ -23,9 +23,9 @@ public class Espacement : MonoBehaviour
 		var average = Vector3.zero;
 		var found = 0;
 
-        foreach (var boid in boids.Where(b => b != boid))
+        foreach (var other in boids.Where(b => b != boid))
 		{
-			var diff = this.transform.position - boid.transform.position; // Calculate the difference vector from this boid to the other boid
+			var diff = this.transform.position - other.transform.position; // Calculate the difference vector from this boid to the other boid
 
 			if (diff.magnitude < radius && diff.magnitude > 0)
 			{

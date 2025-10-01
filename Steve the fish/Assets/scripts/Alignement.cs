@@ -22,8 +22,8 @@ public class Alignement : MonoBehaviour
         var average = Vector3.zero;
         var found = 0;
 
-        foreach (var boid in boids.Where(b => b != boid)){ 
-            var diff = boid.transform.position - this.transform.position; // Calculate the difference vector from this boid to the other boid
+        foreach (var other in boids.Where(b => b != boid)){ 
+            var diff = other.transform.position - this.transform.position; // Calculate the difference vector from this boid to the other boid
 
             if (diff.magnitude < radius) { 
                 average += boid.velocity; 
