@@ -23,8 +23,6 @@ public class Generator : MonoBehaviour
         }
     }
 
-
-
     void SpawnRandom()
     {
         // Générer une position aléatoire dans les limites définies

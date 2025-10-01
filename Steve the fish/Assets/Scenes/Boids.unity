@@ -129,6 +129,7 @@ GameObject:
   m_Component:
   - component: {fileID: 370975110}
   - component: {fileID: 370975109}
+  - component: {fileID: 370975111}
   m_Layer: 0
   m_Name: Generator
   m_TagString: Untagged
@@ -148,7 +149,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31cc29964f859b9459366ab6cd74350c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numbermax: 100
+  numbermax: 150
   BoidPrefab: {fileID: 6719231657290183500, guid: ce43c647a2449994284c67e5de9afbc9, type: 3}
   spawnAreaMin: {x: -20, y: -20, z: -20}
   spawnAreaMax: {x: 20, y: 20, z: 20}
@@ -169,6 +170,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &370975111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 370975108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b48ba6da245ddd740943b8accd307b56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  settings: {fileID: 11400000, guid: 1c353a07921b73c43b666e58dad6eb83, type: 2}
+  leaderColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  leaderLightIntensity: 2
+  leaderSpeedFactor: 0.6
+  sphereCenter: {x: 0, y: 0, z: 0}
+  sphereRadius: 30
 --- !u!1 &926556070
 GameObject:
   m_ObjectHideFlags: 0
@@ -180,7 +199,6 @@ GameObject:
   - component: {fileID: 926556075}
   - component: {fileID: 926556074}
   - component: {fileID: 926556073}
-  - component: {fileID: 926556072}
   - component: {fileID: 926556071}
   m_Layer: 0
   m_Name: Prison
@@ -204,27 +222,6 @@ MonoBehaviour:
   sphereCenter: {x: 0, y: 0, z: 0}
   sphereRadius: 30
   pushStrength: 10
---- !u!135 &926556072
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 926556070}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &926556073
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -287,7 +284,7 @@ Transform:
   m_GameObject: {fileID: 926556070}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.31686, y: 0.2218, z: 0.31686}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 60, y: 60, z: 60}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -501,7 +498,7 @@ Transform:
   m_GameObject: {fileID: 1252068818}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -76.7}
+  m_LocalPosition: {x: -13.2, y: -8.6, z: -64.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

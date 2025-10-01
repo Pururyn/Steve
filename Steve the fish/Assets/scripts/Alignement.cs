@@ -7,9 +7,8 @@ public class Alignement : MonoBehaviour
 {
 
     private Boid boid; 
-    public float radius; 
+    public BoidSettings settings;
 
-    
     void Start()
     {
         boid = GetComponent<Boid>();
@@ -21,11 +20,11 @@ public class Alignement : MonoBehaviour
         var boids = FindObjectsByType<Boid>(FindObjectsSortMode.None);
         var average = Vector3.zero;
         var found = 0;
+        if (boid.isLeader) return;
+        foreach (var other in boids.Where(b => b != boid)){ 
+            var diff = other.transform.position - this.transform.position; // Calculate the difference vector from this boid to the other boid
 
-        foreach (var boid in boids.Where(b => b != boid)){ 
-            var diff = boid.transform.position - this.transform.position; // Calculate the difference vector from this boid to the other boid
-
-            if (diff.magnitude < radius) { 
+            if (diff.magnitude < settings.alignementRadius) { 
                 average += boid.velocity; 
                 found++; 
             }
@@ -34,7 +33,7 @@ public class Alignement : MonoBehaviour
         if (found > 0) 
         { 
             average = average / found; // Calculate the average position of nearby boids
-            boid.velocity += Vector3.Lerp(boid.velocity , average , Time.deltaTime); // Adjust the velocity towards the average position
+            boid.velocity += Vector3.Lerp(boid.velocity, average, Time.deltaTime); // Adjust the velocity towards the average position
         }
     }
 }
