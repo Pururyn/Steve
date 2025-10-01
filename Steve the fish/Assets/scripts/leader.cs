@@ -5,7 +5,7 @@ using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 
-/*public class Leader : MonoBehaviour
+public class Leader : MonoBehaviour
 {
     [SerializeField] private Boid boid;
     List<Boid> boids = new List<Boid>();
@@ -21,4 +21,4 @@ using UnityEngine;
     }
 
 
-}*/
+}

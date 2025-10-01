@@ -22,9 +22,8 @@ public class Cohesion : MonoBehaviour
         var average = Vector3.zero;// Initialize average position
         var found = 0; // Count of nearby boids
 
-        foreach (var boid in boids.Where(b => b != boid))
-        {
-            var diff = boid.transform.position - this.transform.position; // Calculate the difference vector from this boid to the other boid
+        foreach (var other in boids.Where(b => b != boid)){ 
+            var diff = other.transform.position - this.transform.position; // Calculate the difference vector from this boid to the other boid
 
             if (diff.magnitude < radius)
             { // Check if the other boid is within the specified radius
