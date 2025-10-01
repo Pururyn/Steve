@@ -7,9 +7,8 @@ public class Alignement : MonoBehaviour
 {
 
     private Boid boid; 
-    public float radius; 
+    public BoidSettings settings;
 
-    
     void Start()
     {
         boid = GetComponent<Boid>();
@@ -25,7 +24,7 @@ public class Alignement : MonoBehaviour
         foreach (var other in boids.Where(b => b != boid)){ 
             var diff = other.transform.position - this.transform.position; // Calculate the difference vector from this boid to the other boid
 
-            if (diff.magnitude < radius) { 
+            if (diff.magnitude < settings.alignementRadius) { 
                 average += boid.velocity; 
                 found++; 
             }

@@ -6,11 +6,8 @@ using UnityEngine;
 public class Espacement : MonoBehaviour
 {
 
-	private Boid boid; 
-	public float radius;
-	public float espace;
-	public float separationStrength;
-
+	private Boid boid;
+    public BoidSettings settings;
 
     void Start()
 	{
@@ -27,11 +24,11 @@ public class Espacement : MonoBehaviour
 		{
 			var diff = this.transform.position - other.transform.position; // Calculate the difference vector from this boid to the other boid
 
-			if (diff.magnitude < radius && diff.magnitude > 0)
+			if (diff.magnitude < settings.separationRadius && diff.magnitude > 0)
 			{
 				Vector3 repulse = diff.normalized / Mathf.Max(diff.magnitude, 0.01f);
 
-				if (diff.magnitude < espace)
+				if (diff.magnitude < settings.espace)
 				{
 					average += repulse;
 					found++;
@@ -41,7 +38,7 @@ public class Espacement : MonoBehaviour
 		if (found > 0)
 		{
             average = average / found;
-            boid.velocity += average * separationStrength;
+            boid.velocity += average * settings.separationStrength;
 
         }
 

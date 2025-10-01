@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 2123205034398023738}
   - component: {fileID: 6755745976020233465}
   - component: {fileID: 6275396490439332835}
-  - component: {fileID: 5953049324936311250}
-  - component: {fileID: 588394327366432657}
-  - component: {fileID: 362300571765678434}
+  - component: {fileID: 1365452518120636961}
+  - component: {fileID: 6024592630412877408}
+  - component: {fileID: 2894739536617215453}
   m_Layer: 0
   m_Name: boid
   m_TagString: Untagged
@@ -103,7 +103,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d81a1f912064f544bdb6fbe2cfc824f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 20
+  settings: {fileID: 11400000, guid: 1c353a07921b73c43b666e58dad6eb83, type: 2}
 --- !u!114 &6275396490439332835
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -116,8 +116,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f4d538baa298f6489349b1523b9e4f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 30
---- !u!114 &5953049324936311250
+  settings: {fileID: 11400000, guid: 1c353a07921b73c43b666e58dad6eb83, type: 2}
+--- !u!114 &1365452518120636961
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -130,8 +130,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocity: {x: 2, y: 2, z: 2}
-  maxvelocity: 10
---- !u!114 &588394327366432657
+  settings: {fileID: 11400000, guid: 1c353a07921b73c43b666e58dad6eb83, type: 2}
+--- !u!114 &6024592630412877408
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -143,10 +143,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97af2b5fe0a8b254c9b0dd41a822e5d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 30
-  espace: 30
-  separationStrength: 10
---- !u!114 &362300571765678434
+  settings: {fileID: 11400000, guid: 1c353a07921b73c43b666e58dad6eb83, type: 2}
+--- !u!114 &2894739536617215453
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

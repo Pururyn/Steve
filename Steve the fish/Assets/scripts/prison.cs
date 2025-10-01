@@ -27,9 +27,9 @@ public class BoundaryForce : MonoBehaviour
             boid.velocity += pushDir * pushStrength * Time.deltaTime;
 
             // Clamp la vitesse
-            if (boid.velocity.magnitude > boid.maxvelocity)
+            if (boid.velocity.magnitude > boid.settings.maxVelocity)
             {
-                boid.velocity = boid.velocity.normalized * boid.maxvelocity;
+                boid.velocity = boid.velocity.normalized * boid.settings.maxVelocity;
             }
         }
     }
