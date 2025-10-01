@@ -9,9 +9,10 @@ public class Espacement : MonoBehaviour
 	private Boid boid; 
 	public float radius;
 	public float espace;
+	public float separationStrength;
 
 
-	void Start()
+    void Start()
 	{
 		boid = GetComponent<Boid>();
 	}
@@ -40,7 +41,7 @@ public class Espacement : MonoBehaviour
 		if (found > 0)
 		{
             average = average / found;
-            boid.velocity += Vector3.Lerp(Vector3.zero, average, average.magnitude / radius);
+            boid.velocity += average * separationStrength;
 
         }
 

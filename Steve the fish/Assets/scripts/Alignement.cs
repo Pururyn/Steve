@@ -7,7 +7,8 @@ public class Alignement : MonoBehaviour
 {
 
     private Boid boid; 
-    public float radius; 
+    public float radius;
+    public float AlignementStrenght;
 
     
     void Start()
@@ -34,7 +35,7 @@ public class Alignement : MonoBehaviour
         if (found > 0) 
         { 
             average = average / found; // Calculate the average position of nearby boids
-            boid.velocity += Vector3.Lerp(boid.velocity , average , Time.deltaTime); // Adjust the velocity towards the average position
+            boid.velocity += Vector3.Lerp(boid.velocity , average, Time.deltaTime) * AlignementStrenght; // Adjust the velocity towards the average position
         }
     }
 }

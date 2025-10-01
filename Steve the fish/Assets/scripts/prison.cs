@@ -19,14 +19,12 @@ public class BoundaryForce : MonoBehaviour
         float dist = toCenter.magnitude;
 
         // Si le boid est proche ou au-delà de la limite
-        if (dist > sphereRadius * 0.9f) // commence avant de sortir
+        if (dist > sphereRadius * 0.9f) 
         {
             Vector3 pushDir = toCenter.normalized;
 
-            // Ajoute une force qui ramène vers le centre
             boid.velocity += pushDir * pushStrength * Time.deltaTime;
 
-            // Clamp la vitesse
             if (boid.velocity.magnitude > boid.maxvelocity)
             {
                 boid.velocity = boid.velocity.normalized * boid.maxvelocity;
@@ -36,7 +34,6 @@ public class BoundaryForce : MonoBehaviour
 
     void OnDrawGizmosSelected()
     {
-        // Affiche la sphère de confinement quand l’objet est sélectionné
         Gizmos.color = new Color(0, 0.5f, 1f, 0.2f);
         Gizmos.DrawSphere(sphereCenter, sphereRadius);
         Gizmos.color = Color.blue;
