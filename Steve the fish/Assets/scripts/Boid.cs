@@ -5,19 +5,13 @@ using UnityEngine;
 public class Boid : MonoBehaviour
 {
     public Vector3 velocity;
-    public float maxvelocity;
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    public BoidSettings settings;
 
     // Update is called once per frame
     void Update()
     {
-        if (velocity.magnitude > maxvelocity) {
-            velocity = velocity.normalized * maxvelocity; // Limit the maximum speed of the boid
+        if (velocity.magnitude > settings.maxVelocity) {
+            velocity = velocity.normalized * settings.maxVelocity; // Limit the maximum speed of the boid
         }
 
         this.transform.position += velocity * Time.deltaTime; // Move the boid based on its velocity

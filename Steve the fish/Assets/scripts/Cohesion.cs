@@ -7,7 +7,7 @@ public class Cohesion : MonoBehaviour
 {
 
     private Boid boid; // Reference to the Boid component
-    public float radius; // Radius to consider for cohesion
+    public BoidSettings settings; // Radius to consider for cohesion
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -25,8 +25,12 @@ public class Cohesion : MonoBehaviour
         foreach (var other in boids.Where(b => b != boid)){ 
             var diff = other.transform.position - this.transform.position; // Calculate the difference vector from this boid to the other boid
 
+<<<<<<< HEAD
             if (diff.magnitude < radius)
             { // Check if the other boid is within the specified radius
+=======
+            if (diff.magnitude < settings.cohesionRadius) { // Check if the other boid is within the specified radius
+>>>>>>> 7349b393617fa70882e9df7bf9afddcb8abc6cad
                 average += diff; // Accumulate the position of the nearby boid
                 found++; // Increment the count of nearby boids
             }
@@ -35,7 +39,7 @@ public class Cohesion : MonoBehaviour
         if (found > 0)
         {
             average = average / found; // Calculate the average position of nearby boids
-            boid.velocity += Vector3.Lerp(Vector3.zero, average, average.magnitude / radius); // Adjust the velocity towards the average position
+            boid.velocity += Vector3.Lerp(Vector3.zero, average, average.magnitude / settings.cohesionRadius); // Adjust the velocity towards the average position
         }
     }
 }
