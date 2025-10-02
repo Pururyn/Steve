@@ -23,9 +23,9 @@ public class Alignement : MonoBehaviour
         if (boid.isLeader) return;
         // Check for other boids in the alignment radius
         foreach (var other in boids.Where(b => b != boid)){ 
-            var diff = other.transform.position - transform.position; 
+            var distance = other.transform.position - transform.position; 
 
-            if (diff.magnitude < settings.alignementRadius) { 
+            if (distance.magnitude < settings.alignementRadius) { 
                 average += other.velocity; 
                 found++; 
             }

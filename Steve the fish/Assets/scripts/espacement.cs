@@ -22,13 +22,13 @@ public class Espacement : MonoBehaviour
         if (boid.isLeader) return;
         foreach (var other in boids.Where(b => b != boid))
 		{
-			var diff = transform.position - other.transform.position; // Calculate the difference vector from this boid to the other boid
+			var distance = transform.position - other.transform.position; // Calculate the distanceerence vector from this boid to the other boid
 
-			if (diff.magnitude < settings.separationRadius && diff.magnitude > 0)
+			if (distance.magnitude < settings.separationRadius && distance.magnitude > 0)
 			{
-				Vector3 repulse = diff.normalized / Mathf.Max(diff.magnitude, 0.01f);
+				Vector3 repulse = distance.normalized / Mathf.Max(distance.magnitude, 0.01f);
 
-				if (diff.magnitude < settings.espace)
+				if (distance.magnitude < settings.espace)
 				{
 					average += repulse;
 					found++;
