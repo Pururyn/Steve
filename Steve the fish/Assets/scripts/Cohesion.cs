@@ -1,5 +1,6 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
-using System.Linq;
 
 public class Cohesion : MonoBehaviour
 {
@@ -21,14 +22,17 @@ public class Cohesion : MonoBehaviour
         if (boid.isLeader) return;
 
         //Verify if there are other boids in the cohesion radius
-        foreach (var other in boids.Where(b => b != boid))
+        foreach (var other in boids)
         {
-            Vector3 distance = other.transform.position - transform.position;
-
-            if (distance.magnitude < settings.cohesionRadius)
+            if (other != boid)
             {
-                average += distance;
-                found++;
+                Vector3 distance = other.transform.position - transform.position;
+
+                if (distance.magnitude < settings.cohesionRadius)
+                {
+                    average += distance;
+                    found++;
+                }
             }
         }
 

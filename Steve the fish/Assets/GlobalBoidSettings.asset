@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: GlobalBoidSettings
   m_EditorClassIdentifier: 
   maxVelocity: 10
-  cohesionRadius: 10
+  cohesionRadius: 30
   separationRadius: 30
   alignementRadius: 30
   separationStrength: 20
   cohesionStrength: 10
-  useLeader: 1
+  useLeader: 0
   espace: 30
   leaderFollowDistance: 0.5
   leaderFollowStrength: 5
