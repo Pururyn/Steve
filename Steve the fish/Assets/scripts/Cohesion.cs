@@ -13,20 +13,26 @@ public class Cohesion : MonoBehaviour
 
     void Update()
     {
+        //Get all boids in the scene
         var boids = FindObjectsByType<Boid>(FindObjectsSortMode.None);
         Vector3 average = Vector3.zero;
         int found = 0;
+
         if (boid.isLeader) return;
+
+        //Verify if there are other boids in the cohesion radius
         foreach (var other in boids.Where(b => b != boid))
         {
-            Vector3 diff = other.transform.position - transform.position;
-            if (diff.magnitude < settings.cohesionRadius)
+            Vector3 distance = other.transform.position - transform.position;
+
+            if (distance.magnitude < settings.cohesionRadius)
             {
-                average += diff;
+                average += distance;
                 found++;
             }
         }
 
+        //If there are other boids in the cohesion radius, move towards the average position
         if (found > 0)
         {
             average /= found;

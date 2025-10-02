@@ -21,19 +21,20 @@ public class Alignement : MonoBehaviour
         var average = Vector3.zero;
         var found = 0;
         if (boid.isLeader) return;
+        // Check for other boids in the alignment radius
         foreach (var other in boids.Where(b => b != boid)){ 
-            var diff = other.transform.position - this.transform.position; // Calculate the difference vector from this boid to the other boid
+            var diff = other.transform.position - transform.position; 
 
             if (diff.magnitude < settings.alignementRadius) { 
-                average += boid.velocity; 
+                average += other.velocity; 
                 found++; 
             }
         }
 
         if (found > 0) 
         { 
-            average = average / found; // Calculate the average position of nearby boids
-            boid.velocity += Vector3.Lerp(boid.velocity, average, Time.deltaTime); // Adjust the velocity towards the average position
+            average /=  found; 
+            boid.velocity += Vector3.Lerp(boid.velocity, average, Time.deltaTime);
         }
     }
 }

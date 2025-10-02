@@ -21,7 +21,7 @@ public class Boid : MonoBehaviour
             velocity = velocity.normalized * settings.maxVelocity; // Limit the maximum speed of the boid
         }
 
-        this.transform.position += velocity * Time.deltaTime; // Move the boid based on its velocity
-        this.transform.rotation = Quaternion.LookRotation(velocity); // Rotate the boid to face its direction of movement
+        transform.position += velocity * Time.deltaTime; // Move the boid based on its velocity
+        transform.rotation = Quaternion.LookRotation(velocity); // Rotate the boid to face its direction of movement
     }
 }

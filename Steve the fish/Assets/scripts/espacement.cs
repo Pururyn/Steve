@@ -22,7 +22,7 @@ public class Espacement : MonoBehaviour
         if (boid.isLeader) return;
         foreach (var other in boids.Where(b => b != boid))
 		{
-			var diff = this.transform.position - other.transform.position; // Calculate the difference vector from this boid to the other boid
+			var diff = transform.position - other.transform.position; // Calculate the difference vector from this boid to the other boid
 
 			if (diff.magnitude < settings.separationRadius && diff.magnitude > 0)
 			{
@@ -37,7 +37,7 @@ public class Espacement : MonoBehaviour
 		}
 		if (found > 0)
 		{
-            average = average / found;
+            average /= found;
             boid.velocity += average * settings.separationStrength;
 
         }
